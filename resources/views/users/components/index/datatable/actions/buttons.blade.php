@@ -2,7 +2,7 @@
     <i class="fas fa-eye"></i>
 </button>
 
-<button class="btn btn-dark btn-sm">
+<button onclick="editModal({{ $id }})" class="btn btn-dark btn-sm">
     <i class="fas fa-pencil-alt"></i>
 </button>
 

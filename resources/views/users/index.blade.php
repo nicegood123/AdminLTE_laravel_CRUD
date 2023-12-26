@@ -38,6 +38,7 @@
 @section('modals')
     @include('users.components.modals.create')
     @include('users.components.modals.show')
+    @include('users.components.modals.edit')
     @include('users.components.modals.delete')
 @endsection
 
@@ -46,7 +47,6 @@
     @include('users.scripts.ajax.list')
     @include('users.scripts.ajax.create')
     @include('users.scripts.ajax.show')
-
-
+    @include('users.scripts.ajax.edit')
     @include('users.scripts.ajax.delete')
 @endsection

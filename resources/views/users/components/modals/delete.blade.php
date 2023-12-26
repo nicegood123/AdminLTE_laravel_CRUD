@@ -17,6 +17,7 @@
                     Cancel
                 </button>
                 <button id="btnDelete" type="button" class="btn btn-danger" data-dismiss="modal">
+                    <i class="fas fa-trash"></i>
                     Delete
                 </button>
             </div>
