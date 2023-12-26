@@ -1,4 +1,4 @@
-<button class="btn btn-dark btn-sm">
+<button onclick="showModal({{ $id }})" class="btn btn-dark btn-sm">
     <i class="fas fa-eye"></i>
 </button>
 

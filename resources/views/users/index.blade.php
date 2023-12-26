@@ -8,7 +8,7 @@
         <div class="d-flex flex-wrap justify-content-between">
             <h1>Users</h1>
 
-            <button class="btn btn-dark">
+            <button onclick="createModal()" class="btn btn-dark">
                 <i class="fas fa-plus"></i>
                 Add User
             </button>
@@ -36,12 +36,16 @@
 
 
 @section('modals')
+    @include('users.components.modals.create')
+    @include('users.components.modals.show')
     @include('users.components.modals.delete')
 @endsection
 
 
 @section('scripts')
     @include('users.scripts.ajax.list')
+    @include('users.scripts.ajax.create')
+    @include('users.scripts.ajax.show')
 
 
     @include('users.scripts.ajax.delete')

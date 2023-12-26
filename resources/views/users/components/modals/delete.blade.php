@@ -13,7 +13,7 @@
             </p>
 
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-secondary mr-1">
+                <button type="button" class="btn btn-secondary mr-1" data-dismiss="modal">
                     Cancel
                 </button>
                 <button id="btnDelete" type="button" class="btn btn-danger" data-dismiss="modal">

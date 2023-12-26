@@ -1,5 +1,6 @@
 <script>
     function deleteModal(id) {
+        $("#btnDelete").off("click");
         $('#deleteModal').modal('show');
 
         $('#btnDelete').click(function(e) {
@@ -9,7 +10,6 @@
                 url: 'users/delete/' + id,
                 type: 'DELETE',
                 success: function(data) {
-                    $('#deleteModal').modal('hide');
                     $('#dtUsers').DataTable().ajax.reload();
 
                     toastr.success(data.message);
