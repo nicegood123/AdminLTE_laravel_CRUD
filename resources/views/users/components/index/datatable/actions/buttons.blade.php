@@ -6,6 +6,6 @@
     <i class="fas fa-pencil-alt"></i>
 </button>
 
-<button class="btn btn-danger btn-sm">
+<button onclick="deleteModal({{ $id }})" class="btn btn-danger btn-sm">
     <i class="fas fa-trash"></i>
 </button>

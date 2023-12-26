@@ -35,6 +35,14 @@
 @endsection
 
 
+@section('modals')
+    @include('users.components.modals.delete')
+@endsection
+
+
 @section('scripts')
     @include('users.scripts.ajax.list')
+
+
+    @include('users.scripts.ajax.delete')
 @endsection

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\StoreRequest;
+use App\Http\Requests\User\UpdateRequest;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -29,15 +31,59 @@ class UserController extends Controller
         return view('users.index');
     }
 
-    // public function store() {
+    public function store(StoreRequest $request)
+    {
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
 
-    // }
+        return response()->json([
+            'status'    => 'success',
+            'message'   => 'user added successfully.',
+        ]);
+    }
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+
+        return response()->json([
+            'status'    => 'success',
+            'users'     => $user,
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+
+        return response()->json([
+            'status'    => 'success',
+            'users'     => $user,
+        ]);
+    }
+
+    public function update($id, UpdateRequest $request)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return response()->json([
+            'status'    => 'success',
+            'message'   => 'user updated successfully.',
+        ]);
+    }
 
 
     public function delete($id)
     {
         $user = User::findOrFail($id);
-        user->delete();
+        $user->delete();
 
         return response()->json([
             'status'     => 'success',

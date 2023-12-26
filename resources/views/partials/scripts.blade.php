@@ -17,6 +17,10 @@
 <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
+{{-- Toastr --}}
+<script src="{{ asset('assets/dist/js/toastr.min.js') }}"></script>
+
+
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
 
@@ -25,3 +29,12 @@
 
 {{-- <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets//dist/js/demo.js') }}"></script> --}}
+
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
